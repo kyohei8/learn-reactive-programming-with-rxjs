@@ -1,0 +1,26 @@
+extends ./components/layout.pug
+
+block title
+  title case 3 Generating reqestStream
+
+block content
+  .left-box
+    h2.title Generating reqestStream
+    pre.desc
+      | * リフレッシュボタンがクリックされたイベントStream
+      |   それに加えて、クリックされたことから生成されるリクエストStream、を生成する
+      | 1) clickStreamを生成してクリック時のリクエストURLを生成
+      | 2) startWithを利用して初回（画面起動時）のリクエストURLを生成
+    footer.footer-container
+      a.prev(href="./case2.html") ≪prev
+      a.next(href="./case4.html") next ≫
+
+  .right-box
+    .button-container
+      span.button#btn Refresh!
+      span.button#clr Clear
+    .feed-box#feed-box
+
+  // build:js scripts/case3.bundle.js
+  script(src='scripts/case3.bundle.js')
+  // endbuild

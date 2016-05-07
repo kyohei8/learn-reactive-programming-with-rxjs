@@ -1,0 +1,28 @@
+extends ./components/layout.pug
+
+block title
+  title case 2 request and response
+
+block content
+  .left-box
+    h2.title Request and Response
+    pre.desc
+      br
+      | リクエスト＆レスポンスにRxJsがどのようにアプローチするか？
+      | すべてはStreamであり、そこから始まる。
+      | 1) リクエストStremの生成。URLの文字列からStreamを生成する
+      | 2) そのSteamからリクエストを生成、実行する
+      | 3) 生成されるリクエスト(ajax)はPromiseなのでRx.Observable.fromPromise()とflatMapを使って
+      | 別のstream(レスポンスストリーム）を生成する(streamを直接返すようにするためflatmapを使う）
+    footer.footer-container
+      a.prev(href="./case1.html") ≪prev
+      a.next(href="./case3.html") next ≫
+  .right-box
+    .button-container
+      span.button#btn Start Request!
+      span.button#clr Clear
+    .feed-box#feed-box
+
+  // build:js scripts/case2.bundle.js
+  script(src='scripts/case2.bundle.js')
+  // endbuild

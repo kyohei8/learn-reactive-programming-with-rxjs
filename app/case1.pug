@@ -1,0 +1,24 @@
+extends ./components/layout.pug
+
+block title
+  title case 1 Multiple click
+
+block content
+  .left-box
+    h2.title Multiple clicks
+    pre.desc
+      | `.buffer(clickStream.debounce(250))`を使って
+      | 複数回のクリックイベントを取得するサンプル
+    img(src="https://gist.github.com/staltz/868e7e9bc2a7b8c1f754/raw/35cc1edb69b7175fd1308800a244410890bc9b5f/zmulticlickstream.png", width="512")
+    footer.footer-container
+      a.prev(href="./case0.html") ≪prev
+      a.next(href="./case2.html") next ≫
+  .right-box
+    .button-container
+      span.button#btn multi Click Me!
+      span.button#clr Clear
+    .feed-box#feed-box
+
+  // build:js scripts/case1.bundle.js
+  script(src='scripts/case1.bundle.js')
+  // endbuild

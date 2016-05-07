@@ -1,0 +1,36 @@
+extends ./components/layout.pug
+
+block title
+  title case 5 Using cached responses
+
+block content
+  .left-box
+    h2.title Using cached responses
+    pre.desc
+      | 1) クローズボタンをクリックした時のイベントstreamを定義
+      | 2) `conbineLatest()`を利用し、２つのstream(responseStreamとcloseClickStream)から
+      |  最後の２つのイベントを取り出し利用する
+      | 3) 全体を繋げる
+    p.desc 全体を図で表すとこんな感じ
+    p.desc ref:
+      a(href="https://gist.github.com/staltz/868e7e9bc2a7b8c1f754#gistcomment-1648160") https://gist.github.com/staltz/868e7e9bc2a7b8c1f754#gistcomment-1648160
+    img(src="https://cloud.githubusercontent.com/assets/8998708/11766682/fc64d102-a192-11e5-86f2-e8009428410c.png", width="800")
+    footer.footer-container
+      a.prev(href="./case4.html") ≪prev
+  .right-box
+    .button-container
+      span.button#btn Refresh!
+    .feed-box#feed-box(style="position: relative; top: 0")
+      .feed
+        .user#user1
+        .close#close1 ×
+      .feed
+        .user#user2
+        .close#close2 ×
+      .feed
+        .user#user3
+        .close#close3 ×
+
+  // build:js scripts/case5.bundle.js
+  script(src='scripts/case5.bundle.js')
+  // endbuild
